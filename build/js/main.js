@@ -11,3 +11,7 @@ ds.addSlide({
     `,
     imgBkgnd: 'https://www.wuft.org/news/files/2017/07/IMG_0691.jpg'
 });
+
+ds.addSlide({
+    name: 'my-fancy-slug',
+});
