@@ -13,5 +13,5 @@ ds.addSlide({
 });
 
 ds.addSlide({
-    name: 'my-fancy-slug',
+    name: 'something-else',
 });
