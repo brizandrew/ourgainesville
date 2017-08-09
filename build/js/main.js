@@ -2,6 +2,12 @@ var ds = require('./discovery.js');
 ds.init();
 
 ds.addSlide({
+    name: 'our-gainesville',
+    headline: 'Our Gainesville',
+    moreText: 'ABOUT'
+});
+
+ds.addSlide({
     name: 'its-a-cade-thing',
     headline: 'it\'s a cade thing',
     content: `
