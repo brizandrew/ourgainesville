@@ -29,12 +29,28 @@ module.exports = {
             className: 'swiper-button-prev swiper-button-white',
             appendTo: this.container,
         });
+        this.prevButton.onclick = function(){
+            window.ga('send', {
+                hitType: 'event',
+                eventCategory: 'Slide',
+                eventAction: 'prev-button-clicked',
+                eventLabel: 'Our Gainesville'
+            });
+        };
 
         this.nextButton = this.newElement({
             name: 'div',
             className: 'swiper-button-next swiper-button-white',
             appendTo: this.container,
         });
+        this.nextButton.onclick = function(){
+            window.ga('send', {
+                hitType: 'event',
+                eventCategory: 'Slide',
+                eventAction: 'next-button-clicked',
+                eventLabel: 'Our Gainesville'
+            });
+        };
 
         this.slides = [];
 
@@ -47,11 +63,38 @@ module.exports = {
             if (activeSlide.content !== undefined) {
                 const toggleOnCondition = !activeSlide.contentOn && e.wheelDeltaY < -50 && activeSlide.content.scrollTop === 0;
                 const toggleOffCondition = activeSlide.contentOn && e.wheelDeltaY > 50 && activeSlide.content.scrollTop === 0;
+                if (toggleOnCondition){
+                    window.ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Slide',
+                        eventAction: 'vertical-scroll-open',
+                        eventLabel: 'Our Gainesville'
+                    });
+                }
+                if (toggleOffCondition){
+                    window.ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Slide',
+                        eventAction: 'vertical-scroll-close',
+                        eventLabel: 'Our Gainesville'
+                    });
+                }
                 if (toggleOnCondition || toggleOffCondition) {
                     activeSlide.toggleContent(2);
                 }
             }
         });
+
+        if(this.swiper.activeIndex != 0){
+            const curSlide = this.slides[this.swiper.activeIndex];
+            window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
+            window.ga('send', {
+                hitType: 'event',
+                eventCategory: 'Slide',
+                eventAction: `hash-entry-${ curSlide.name }`,
+                eventLabel: 'Our Gainesville'
+            });
+        }
     },
 
     addSlide(config) {
@@ -101,6 +144,17 @@ module.exports = {
             this.translationY = val;
         };
 
+        const loadContent = function() {
+            if(this.content !== undefined && !this.contentLoaded){
+                console.log(`Loading ${this.name}...`);
+                this.content.innerHTML = this.contentHTML;
+                this.contentLoaded = true;
+
+                // resize the videos
+                window.longform.rv.resize();
+            }
+        };
+
         const openContent = function (speed) {
             const startValue = this.translationY;
             const totalChange = 0 - startValue;
@@ -120,6 +174,7 @@ module.exports = {
 
 
             this.contentOn = true;
+            window.ga('send', 'screenview', {screenName: `${ this.name }-content`});
         };
 
         const closeContent = function (speed) {
@@ -188,11 +243,13 @@ module.exports = {
 
         // creating base object
         const slideObj = {
+            name: config.name,
             slide,
             cover,
             contentOn,
             translationY,
             setTranslateY,
+            loadContent,
             animateContent,
             openContent,
             closeContent,
@@ -242,9 +299,11 @@ module.exports = {
                 name: 'div',
                 className: 'longform',
                 appendTo: slide,
-                innerHTML: config.content,
+                innerHTML: '<p>Loading...</p>',
             });
             slideObj.content = content;
+            slideObj.contentLoaded = false;
+            slideObj.contentHTML = config.content;
 
             const more = this.newElement({
                 name: 'div',
@@ -264,6 +323,12 @@ module.exports = {
                 e.preventDefault();
                 slideObj.openContent(true);
                 self.toggleSwiperButtons(false);
+                window.ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'Slide',
+                    eventAction: 'more-button-clicked',
+                    eventLabel: 'Our Gainesville'
+                });
             };
             for (let i = more.children.length - 1; i >= 0; i--) {
                 more.children[i].addEventListener('click', moreClickHandler);
@@ -280,8 +345,10 @@ module.exports = {
         // reinitializing swiper
         this.initSwiper();
 
-        // resize the videos
-        window.longform.rv.resize();
+        // load the first slide
+        if(this.slides.length == 1){
+            slideObj.loadContent();
+        }
     },
 
     initSwiper() {
@@ -347,8 +414,32 @@ module.exports = {
                         nextSlide.vidBkgnd.currentTime = 0;
                     }
                 }
+
+                if(self.lastSlideIndex !== swiper.activeIndex ){
+                    self.lastSlideIndex = swiper.activeIndex;
+                    curSlide.loadContent();
+                    window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
+                }
+
             },
+            onSliderMove(){
+                window.ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'Slide',
+                    eventAction: 'horizontal-slide-swipe',
+                    eventLabel: 'Our Gainesville'
+                });
+            },
+            onScroll(){
+                window.ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'Slide',
+                    eventAction: 'horizontal-slide-scroll',
+                    eventLabel: 'Our Gainesville'
+                });
+            }
         });
+
     },
 
     toggleSwiperButtons(forceState) {
@@ -431,7 +522,24 @@ module.exports = {
             window.addEventListener('touchend', function () {
                 if (self.activeSlide.content !== undefined) {
                     if (self.activeSlide.content.scrollTop === 0 && self.deltaMouseY > 20) {
-                        if (!self.activeSlide.contentOn && this.direction == 1) { self.activeSlide.toggleContent(1); } else if (self.activeSlide.contentOn && this.direction === 0) { self.activeSlide.toggleContent(1); }
+                        if (!self.activeSlide.contentOn && this.direction == 1) {
+                            self.activeSlide.toggleContent(1);
+                            window.ga('send', {
+                                hitType: 'event',
+                                eventCategory: 'Slide',
+                                eventAction: 'vertical-swipe-open',
+                                eventLabel: 'Our Gainesville'
+                            });
+                        }
+                        else if (self.activeSlide.contentOn && this.direction === 0) {
+                            self.activeSlide.toggleContent(1);
+                            window.ga('send', {
+                                hitType: 'event',
+                                eventCategory: 'Slide',
+                                eventAction: 'vertical-swipe-close',
+                                eventLabel: 'Our Gainesville'
+                            });
+                        }
                     } else {
                         self.activeSlide.setTranslateY(self.startContentY);
                     }
