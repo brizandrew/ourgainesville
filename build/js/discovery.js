@@ -1,6 +1,7 @@
 module.exports = {
     sw: require('swiper'),
     newElement: require('./newElement.js').newElement,
+    toggleClass: require('./toggleClass.js'),
 
     init() {
         window.discovery = this;
@@ -227,14 +228,14 @@ module.exports = {
         } else if (config.imgBkgnd !== undefined) {
             // image background
             this.newElement({
-                name: 'img',
+                name: 'div',
+                className: 'img',
                 appendTo: coverBkgnd,
-                attrs: {
-                    src: config.imgBkgnd,
+                styles: {
+                    backgroundImage: `url("${ config.imgBkgnd }")`
                 },
             });
         }
-
 
         if (config.content !== undefined) {
             const content = this.newElement({
@@ -278,6 +279,9 @@ module.exports = {
 
         // reinitializing swiper
         this.initSwiper();
+
+        // resize the videos
+        window.longform.rv.resize();
     },
 
     initSwiper() {
