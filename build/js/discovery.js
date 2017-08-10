@@ -360,7 +360,7 @@ module.exports = {
             paginationType: 'progress',
             paginationClickable: false,
             keyboardControl: true,
-            mousewheelControl: true,
+            mousewheelControl: false,
             mousewheelInvert: true,
             mousewheelForceToAxis: true,
             preloadImages: false,
