@@ -1764,9 +1764,45 @@ html, body{
 }
 
 #discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img{
-    background-size: cover;
+	background-size: cover;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.center{
     background-position: 50% 50%;
 }
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.topLeft{
+    background-position: 0 0;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.topMid{
+    background-position: 50% 0;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.topRight{
+    background-position: 100% 0;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.midRight{
+    background-position: 100% 50%;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.botRight{
+    background-position: 100% 100%;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.botMid{
+    background-position: 50% 100%;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.botLeft{
+    background-position: 0 100%;
+}
+
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd div.img.midLeft{
+    background-position: 0 50%;
+}
+
 
 #discovery .swiper-slide .more{
 	position: absolute;

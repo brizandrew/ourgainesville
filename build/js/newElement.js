@@ -4,20 +4,21 @@
  */
 module.exports = {
     /**
-	* Creates a new element based on a config file
-	* @param {Object} config - Options for creating an element
-	* @param {String} config.name - The name of the HTML element (i.e. tag)
-	* @param {String} [config.id] - The name of a id attribute to add
-	* @param {String} [config.className] - The name of a class attribute to add
-	* @param {HTMLElement} [config.appendTo] - The element this element should be appended to
-	* @param {Object} [config.attrs] - Options for other attributes in key:value pairs.
-	* @param {Object} [config.innerHTML] - The inner HTML contents of the element
-	* @param {Object[]} [config.rules] - CSS style rules in JSON format (only for making new "style" elements)
-	* @param {String} config.rules[].selector - CSS selector to apply certain properties to
-	* @param {Object[]} config.rules[].properties - Properties to apply to the selected elements
-	* @param {String} config.rules.proerties[].prop - Name of the property
-	* @param {String} config.rules.proerties[].val - Value to assign to the property
-	*/
+    * Creates a new element based on a config file
+    * @param {Object} config - Options for creating an element
+    * @param {String} config.name - The name of the HTML element (i.e. tag)
+    * @param {String} [config.id] - The name of a id attribute to add
+    * @param {String} [config.className] - The name of a class attribute to add
+    * @param {HTMLElement} [config.appendTo] - The element this element should be appended to
+    * @param {Object} [config.attrs] - Options for other attributes in key:value pairs.
+    * @param {String} [config.innerHTML] - The inner HTML contents of the element
+    * @param {Object} [config.styles] - Inline CSS style rules in using javascript style properties in key:value pairs.
+    * @param {Object[]} [config.rules] - CSS style rules in JSON format (only for making new "style" elements)
+    * @param {String} config.rules[].selector - CSS selector to apply certain properties to
+    * @param {Object[]} config.rules[].properties - Properties to apply to the selected elements
+    * @param {String} config.rules.proerties[].prop - Name of the property
+    * @param {String} config.rules.proerties[].val - Value to assign to the property
+    */
     newElement: function(config){
         if(config.name === undefined){
             throw new Error('New Element: element node needs name.');
