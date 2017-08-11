@@ -273,6 +273,9 @@ module.exports = {
         const backgroundType = config.backgroundType === undefined ?
             'center' : config.backgroundType;
 
+        const backPosOverride = config.backPosOverride === undefined ?
+            '' : config.backPosOverride;
+
         if (config.vidBkgnd !== undefined) {
             const vidBkgnd = this.newElement({
                 name: 'video',
@@ -293,7 +296,8 @@ module.exports = {
                 className: `img ${ backgroundType }`,
                 appendTo: coverBkgnd,
                 styles: {
-                    backgroundImage: `url("${ config.imgBkgnd }")`
+                    backgroundImage: `url("${ config.imgBkgnd }")`,
+                    backgroundPosition: `${ backPosOverride }`
                 },
             });
         }

@@ -1,0 +1,786 @@
+/***** WUFT Remove Header and Footer *****/
+body{
+	background-image: none;
+}
+
+header,
+footer,
+#topcontrol,
+.footer-bottom{
+	display: none;
+}
+
+#wrapper.wide-layout #main-content{
+	padding: 0;
+	margin: 0;
+	width: 100% !important;
+}
+
+/***** Global Styles *****/
+body{
+	margin: 0;
+}
+
+.longform,
+.longform p,
+.longform blockquote p,
+.longform figure figcaption{
+	font-family: 'Muli', serif;
+}
+
+.longform p:empty{
+	display: none;
+}
+
+.longform h1,
+.longform h2,
+.longform h3,
+.longform h4,
+.longform h5,
+.longform h6{
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+}
+
+.longform p,
+.longform h1,
+.longform h2,
+.longform h3,
+.longform h4,
+.longform h5,
+.longform h6,
+.longform blockquote,
+.longform ul,
+.longform .addthis_inline_share_toolbox{
+	max-width: 650px;
+	padding: 0 10px;
+	color: #333333;
+}
+
+.longform{
+	position: relative;
+}
+
+.longform p,
+.longform figure,
+.longform blockquote,
+.longform ul,
+.longform .addthis_inline_share_toolbox{
+	margin: 21px auto;
+}
+
+/***** Banner *****/
+#wuft-banner{
+	padding: 12px;
+	position: absolute;
+	z-index: 1;
+	background-color: #212121;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#wuft-banner h3{
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 0px;
+	font-family: 'Muli';
+}
+
+#wuft-banner h3 a{
+	text-decoration: none;
+	color: white;
+}
+
+/***** Covers *****/
+.longform #cover{
+	width: 100%;
+	height: 100vh;
+	min-height: 400px;
+}
+
+.longform #cover .cover-photo{
+	height: 100%;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.longform #cover .cover-content{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.longform #cover #cover-headline{
+	color: white;
+	text-align: center;
+	max-width: none;
+	padding: 0;
+	text-transform: uppercase;
+	margin: 0;
+	text-shadow: rgba(0,0,0,0.6) -2px 2px 14px;
+}
+
+.longform #cover #cover-subhead{
+	color: white;
+	text-shadow: rgba(0,0,0,0.6) -2px 2px 14px;
+	border-top: 4px solid white;
+	margin: 21px auto 0;
+}
+
+.longform #cover .cover-content #cover-continue{
+	height: 40px;
+	width: 100%;
+	position: absolute;
+    left: 0;
+    bottom: 25px;
+}
+
+.longform #cover .cover-content #cover-continue a{
+	height: 40px;
+	display: block;
+	width: 40px;
+	margin: 0 auto;
+	border: 2px solid white;
+	border-radius: 40px;
+}
+
+.longform #cover .cover-content #cover-continue svg{
+	width: 100%;
+	height: 100%;
+	fill: white;
+}
+
+.longform #cover .cover-photo .washer{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(72, 72, 72, 0.52);
+}
+
+.longform .cover-photo .parallax-img{
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position-x: 50% !important;
+}
+
+/***** Headline Sizing *****/
+.longform #cover .cover-content{
+	padding: 0px 40px 35px;
+}
+
+.longform #cover #cover-headline{
+	font-size: 150px;
+	line-height: 137px;
+}
+
+.longform #cover #cover-subhead{
+	font-size: 50px;
+	max-width: 1000px;
+}
+
+@media screen and (max-width: 1500px) {
+	.longform #cover #cover-headline{
+		font-size: 95px;
+		line-height: 85px;
+	}
+
+	.longform #cover #cover-subhead{
+		font-size: 40px;
+		max-width: 650px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.longform #cover #cover-headline{
+		font-size: 75px;
+		line-height: 70px;
+	}
+
+	.longform #cover #cover-subhead{
+		font-size: 40px;
+		max-width: 650px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.longform #cover #cover-headline{
+		font-size: 50px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.longform #cover #cover-headline{
+		font-size: 32px;
+		line-height: 57px;
+		width: 100%;
+	}
+
+	.longform #cover #cover-subhead{
+		font-size: 30px;
+	}
+
+	.longform #cover #cover-dateline{
+		padding: 0 20px;
+	}
+}
+
+/***** Byline | Dateline *****/
+.longform #by-date{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+
+/***** Headings *****/
+.longform .byline{
+    text-align: center;
+    font-weight: bold;
+	margin: 55px auto 21px;
+}
+
+.longform h1{
+	font-size: 25px;
+	margin: 35px auto 0px;
+	text-align: center;
+}
+
+.longform h2{
+	font-size: 42px;
+	margin: 21px auto -15px;
+	text-align: center;
+}
+
+.longform h3,
+.longform h4,
+.longform h5,
+.longform h6{
+	font-size: 24px;
+	margin: 21px auto -14px
+}
+
+@media screen and (max-width: 500px) {
+	.longform h2{
+		font-size: 28px;
+		margin: 21px auto -15px;
+		text-align: center;
+	}
+}
+
+/***** Copy Paragraphs *****/
+.longform p{
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.7;
+}
+
+/***** Anchor Tags *****/
+.longform p a{
+	position: relative;
+	font-weight: bold;
+	color: #428bca;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.longform p a:hover:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 0;
+	left: 0;
+	bottom: -2px;
+	border-top: 2px solid #428bca;
+}
+
+/***** Horizontal Rules *****/
+.longform hr.doubleLine{
+	max-width: 250px;
+	margin: 0 auto;
+	border: 0;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	height: 2px;
+	clear: both;
+}
+
+/***** Figures *****/
+.longform figure{
+	max-width: 900px;
+}
+
+.longform figure{
+	width: 100%;
+}
+
+.longform figcaption{
+	font-size: 12px;
+    color: #666666;
+	line-height: 1.5;
+	max-width: 650px;
+	margin: 0 auto;
+}
+
+.longform figure img{
+	width: 100%;
+}
+
+.longform figure iframe{
+	background-color: black;
+	background-image: url('./loading.gif');
+	background-size: contain;
+}
+
+.longform figure.left,
+.longform figure.right{
+	margin: 9px 0 5px 0;
+}
+
+.longform figure.left{
+	float: left;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.longform figure.right{
+	float: right;
+	margin-left: 20px;
+	text-align: left;
+}
+
+.longform figure.full{
+	margin: 0;
+	width: 100%;
+	max-width: none;
+}
+
+.longform figure.full figcaption{
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.longform figure.parallax{
+	max-width: none;
+}
+
+.longform figure.parallax h2{
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+	text-shadow: rgba(0,0,0,0.6) -2px 2px 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.longform figure.parallax figcaption{
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.longform figure.parallax .washer{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(72, 72, 72, 0.52);
+}
+
+.longform figure.parallax .parallaxContainer{
+	width: 100%;
+	height: 600px;
+	margin: 0;
+	position: relative;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.longform figure.parallax .imgContainer{
+	clip: rect(0, auto, auto, 0);
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.longform figure.parallax .parallax-img{
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+}
+
+.longform figure.parallax video,
+.longform figure.parallax img{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1500px) {
+	.longform figure.parallax .parallaxContainer{
+		height: 500px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.longform figure.parallax .parallaxContainer{
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.longform figure.parallax .parallaxContainer{
+		height: 250px;
+	}
+}
+
+/***** Quotes *****/
+.longform blockquote p{
+	margin: 0;
+	border: 0;
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+.longform blockquote.left,
+.longform blockquote.right{
+	margin: 9px 0 5px 0;
+}
+
+.longform blockquote.left p,
+.longform blockquote.right p{
+	font-size: 22px;
+}
+
+.longform blockquote.center p{
+	font-size: 25px;
+}
+
+.longform blockquote.left{
+	float: left;
+	border-right: 1px solid #bdbcbc;
+	margin-right: 10px;
+	padding-right: 15px;
+	text-align: right;
+}
+
+.longform blockquote.right{
+	float: right;
+	border-left: 1px solid #bdbcbc;
+	margin-left: 10px;
+	padding-left: 15px;
+	text-align: left;
+}
+
+.longform blockquote.center{
+	border-left: 4px solid #bdbcbc;
+	left: 10px;
+	right: 10px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.longform blockquote.center p:before,
+.longform blockquote.center p:after{
+	font: inherit;
+}
+
+.longform blockquote.center p:before{
+	content: "\201C";
+}
+
+.longform blockquote.center p:after{
+	content: "\201D";
+}
+
+.longform p.blockquote{
+    color: #565656;
+    font-style: italic;
+    padding-left: 70px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 15px auto;
+}
+
+@media screen and (max-width: 650px) {
+	.longform p.blockquote{
+		padding-left: 35px;
+	}
+}
+
+/***** Breakout *****/
+.longform figure.breakout{
+	max-width: 500px;
+	border: 1px solid #e2e1e0;;
+	background-color: #f1f0ef;
+	border-radius: 10px;
+}
+
+.longform figure.breakout .heading h3{
+	margin: 5px 0;
+}
+
+.longform figure.breakout .toggleArrow{
+	text-align: center;
+	font-size: 15px;
+}
+
+.longform figure.breakout .toggleArrow svg{
+	fill: #333333;;
+	width: 40px;
+	transition: transform 0.5s;
+	cursor: pointer;
+}
+
+.longform figure.breakout .toggleArrow svg.toggled{
+	transform: rotate(-180deg);
+}
+
+
+.longform figure.breakout .heading .summary p{
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.longform figure.breakout .content{
+	display: none;
+}
+
+.longform figure.breakout .content hr{
+	margin: 0 40px;
+}
+
+/***** Sizing Floated Content *****/
+.longform figure.left,
+.longform figure.right{
+	width: calc(19% - 20px);
+}
+
+.longform blockquote.left,
+.longform blockquote.right{
+	width: calc(19% - 45px);
+}
+
+.longform figure.left,
+.longform blockquote.left{
+	margin-left: 26%;
+}
+
+.longform figure.right,
+.longform blockquote.right{
+	margin-right: 26%;
+}
+
+@media screen and (max-width: 1500px) {
+	.longform figure.left,
+	.longform figure.right{
+		width: calc(31% - 20px);
+	}
+
+	.longform blockquote.left,
+	.longform blockquote.right{
+		width: calc(31% - 45px);
+	}
+
+	.longform figure.left,
+	.longform blockquote.left{
+		margin-left: 14%;
+	}
+
+	.longform figure.right,
+	.longform blockquote.right{
+		margin-right: 14%;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.longform figure.left,
+	.longform figure.right{
+		width: calc(40% - 20px);
+	}
+
+	.longform blockquote.left,
+	.longform blockquote.right{
+		width: calc(40% - 45px);
+	}
+
+	.longform figure.left,
+	.longform blockquote.left{
+		margin-left: 5%;
+	}
+
+	.longform figure.right,
+	.longform blockquote.right{
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.longform figure.left,
+	.longform figure.right{
+		width: calc(45% - 20px);
+	}
+
+	.longform blockquote.left,
+	.longform blockquote.right{
+		width: calc(45% - 45px);
+	}
+
+	.longform figure.left,
+	.longform blockquote.left{
+		margin-left: 5%;
+	}
+
+	.longform figure.right,
+	.longform blockquote.right{
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.longform figure.left,
+	.longform figure.right{
+		width: 100%;
+		margin: 21px 0;
+	}
+
+	.longform figcaption{
+		text-align: left;
+		margin: 0 10px;
+	}
+
+	.longform .parallax figcaption{
+		text-align: center;
+		margin: 0;
+	}
+
+	.longform blockquote{
+		margin: 0 10px;
+	}
+
+	.longform blockquote.left,
+	.longform blockquote.right{
+		float: none;
+		width: inherit;
+		font-size: 25px;
+		border-left: 4px solid #bdbcbc;
+		left: 2px;
+		right: 2px;
+		position: relative;
+		box-sizing: border-box;
+		margin: 0 10px;
+		padding: 0 10px;
+	}
+
+	.longform blockquote.left:before,
+	.longform blockquote.right:before{
+		content: "\201C";
+	}
+
+	.longform blockquote.left:after,
+	.longform blockquote.right:after{
+		content: "\201D";
+	}
+
+	.longform blockquote.left{
+		text-align: left;
+		border-right: none;
+	}
+
+	.longform figure.breakout{
+		margin: 0 20px;
+	}
+}
+
+/***** Lists *****/
+.longform li{
+	list-style: none;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.longform li:before{
+    content: "|";
+    position: absolute;
+    left: 10px;
+    color: #428bca;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/***** Swiper Carousel *****/
+.longform .swiper-slide{
+	height: auto;
+}
+
+.longform .swiper-container,
+.longform .swiper-wrapper{
+	z-index: 0;
+}
+
+.longform .swiper-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	min-height: 300px;
+}
+
+.longform .swiper-container-horizontal .swiper-pagination-bullets{
+	bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
