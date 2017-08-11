@@ -4,6 +4,7 @@ ds.init();
 ds.addSlide({
     name: 'our-gainesville',
     headline: 'Our Gainesville',
+    backgroundType: 'center',
     moreText: 'ABOUT'
 });
 
