@@ -270,9 +270,16 @@ module.exports = {
             });
         }
 
+        const backgroundType = config.backgroundType === undefined ?
+            'center' : config.backgroundType;
+
+        const backPosOverride = config.backPosOverride === undefined ?
+            '' : config.backPosOverride;
+
         if (config.vidBkgnd !== undefined) {
             const vidBkgnd = this.newElement({
                 name: 'video',
+                className: `${ backgroundType }`,
                 appendTo: coverBkgnd,
                 attrs: {
                     src: config.vidBkgnd,
@@ -286,10 +293,11 @@ module.exports = {
             // image background
             this.newElement({
                 name: 'div',
-                className: 'img',
+                className: `img ${ backgroundType }`,
                 appendTo: coverBkgnd,
                 styles: {
-                    backgroundImage: `url("${ config.imgBkgnd }")`
+                    backgroundImage: `url("${ config.imgBkgnd }")`,
+                    backgroundPosition: `${ backPosOverride }`
                 },
             });
         }
@@ -308,7 +316,16 @@ module.exports = {
             const more = this.newElement({
                 name: 'div',
                 className: 'more',
-                innerHTML: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.68 20.08"><path d="M0.84,19.2a1.58,1.58,0,0,0,0,2.8,3.87,3.87,0,0,0,4.08,0L26.33,7.29,47.75,22a3.87,3.87,0,0,0,4.08,0,1.58,1.58,0,0,0,0-2.8h0L28.33,3.08a3.87,3.87,0,0,0-4.07,0h0Z" transform="translate(0 -2.51)"/></svg>',
+                innerHTML: `
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.68 20.08">
+                        <path
+                            d="
+                                M0.84,19.2a1.58,1.58,0,0,0,0,2.8,3.87,3.87,0,0,0,4.08,0L26.33,7.29,47.75,22a3.87,
+                                3.87,0,0,0,4.08,0,1.58,1.58,0,0,0,0-2.8h0L28.33,3.08a3.87,3.87,0,0,0-4.07,0h0Z
+                            "
+                            transform="translate(0 -2.51)"
+                        />
+                    </svg>`,
                 appendTo: slide,
             });
 
