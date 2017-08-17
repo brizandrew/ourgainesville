@@ -23,7 +23,9 @@
 
         <!-- Custom Meta Tags By Story Slug -->
         <?php
-            $home = 'our-gainesville';
+            $home = 'our-gainesville'; // default value
+
+            // metadata for each story
             $metadata = array(
                 "our-gainesville" => array(
                     "title" => "Our Gainesville",
@@ -37,6 +39,7 @@
                 ),
             );
 
+            // get the slug from the url paramater or default to the $home value
             $slug = $_GET['s'];
             if(!$slug or !array_key_exists($slug, $metadata))
                 $slug = $home;
