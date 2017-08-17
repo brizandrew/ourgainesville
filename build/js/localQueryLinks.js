@@ -57,7 +57,7 @@ module.exports = {
             a.setAttribute('localQueryLink', '');
             a.addEventListener('click', e => {
                 e.preventDefault();
-                let url = window.location.origin + window.location.pathname + a.getAttribute('href');
+                const url = window.location.origin + window.location.pathname + a.getAttribute('href');
                 history.pushState(null, a.innerHTML, url );
                 document.dispatchEvent(queryLinkClicked);
                 if(callback !== undefined){

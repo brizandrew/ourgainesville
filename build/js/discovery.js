@@ -8,6 +8,8 @@ module.exports = {
 
     preInit() {
         window.discovery = this;
+        this.title = document.querySelector('title');
+
         this.container = this.newElement({
             name: 'div',
             id: 'discovery',
@@ -104,6 +106,8 @@ module.exports = {
     addSlide(config) {
         const self = this;
 
+        const name = config.name;
+
         // creating base elements
         const slide = this.newElement({
             name: 'div',
@@ -182,7 +186,10 @@ module.exports = {
 
 
             this.contentOn = true;
-            window.ga('send', 'screenview', {screenName: `${ this.name }-content`});
+            window.ga('send', 'screenview', {
+                appName: 'Our Gainesville',
+                screenName: `${ this.name }-content`
+            });
         };
 
         const closeContent = function (speed) {
@@ -251,7 +258,8 @@ module.exports = {
 
         // creating base object
         const slideObj = {
-            name: config.name,
+            name,
+            config,
             slide,
             cover,
             contentOn,
@@ -446,8 +454,20 @@ module.exports = {
 
                 if(self.lastSlideIndex !== swiper.activeIndex ){
                     self.lastSlideIndex = swiper.activeIndex;
-                    window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
+                    window.ga('send', 'screenview', {
+                        appName: 'Our Gainesville',
+                        screenName: `${ curSlide.name }-cover`
+                    });
                 }
+
+                let url;
+                if(swiper.activeIndex > 0)
+                    url = `${window.location.origin}${window.location.pathname}?s=${curSlide.name}`;
+                else
+                    url = `${window.location.origin}${window.location.pathname}`;
+
+                history.pushState(null, curSlide.config.headline, url );
+                self.title.innerHTML = curSlide.config.headline;
 
             },
             onSliderMove(){
@@ -471,7 +491,10 @@ module.exports = {
         // track hash entries into the page
         if(this.swiper.activeIndex != 0){
             const curSlide = this.slides[this.swiper.activeIndex];
-            window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
+            window.ga('send', 'screenview', {
+                appName: 'Our Gainesville',
+                screenName: `${ curSlide.name }-cover`
+            });
             window.ga('send', {
                 hitType: 'event',
                 eventCategory: 'Slide',
@@ -607,7 +630,8 @@ module.exports = {
             throw new Error('discovery: slideTo paramter must be a number or string.');
         }
 
-        this.swiper.slideTo(index, null, false);
+        this.swiper.slideTo(index);
+        this.title.innerHTML = this.slides[index].config.headline;
     },
 
     handleLocalQueryLink: function(){
