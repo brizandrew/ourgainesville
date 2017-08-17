@@ -1,9 +1,12 @@
 module.exports = {
     sw: require('swiper'),
+    fsv: require('./fullscreenVideo.js'),
+    lql: require('./localQueryLinks.js'),
     newElement: require('./newElement.js').newElement,
     toggleClass: require('./toggleClass.js'),
+    queryParser: require('./queryParser.js'),
 
-    init() {
+    preInit() {
         window.discovery = this;
         this.container = this.newElement({
             name: 'div',
@@ -54,7 +57,7 @@ module.exports = {
 
         this.slides = [];
 
-        this.initSwiper();
+        // this.initSwiper();
         this.touchHandler.init(this);
 
         const self = this;
@@ -85,16 +88,17 @@ module.exports = {
             }
         });
 
-        if(this.swiper.activeIndex != 0){
-            const curSlide = this.slides[this.swiper.activeIndex];
-            window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
-            window.ga('send', {
-                hitType: 'event',
-                eventCategory: 'Slide',
-                eventAction: `hash-entry-${ curSlide.name }`,
-                eventLabel: 'Our Gainesville'
-            });
-        }
+        // initliaze fullscreen video plugin
+        this.fsv.init(this.container);
+    },
+
+    postInit() {
+        this.initSwiper();
+
+        // route to proper story if in url paramater
+        const queryObj = this.queryParser(window.location.search);
+        if(queryObj !== null)
+            this.slideTo(queryObj.s);
     },
 
     addSlide(config) {
@@ -146,16 +150,20 @@ module.exports = {
 
         const loadContent = function() {
             if(this.content !== undefined && !this.contentLoaded){
-                console.log(`Loading ${this.name}...`);
                 this.content.innerHTML = this.contentHTML;
                 this.contentLoaded = true;
 
                 // resize the videos
                 window.longform.rv.resize();
+
+                // handle local query links
+                self.lql.reroute(self.handleLocalQueryLink());
             }
         };
 
         const openContent = function (speed) {
+            this.loadContent();
+
             const startValue = this.translationY;
             const totalChange = 0 - startValue;
             const overflow = 'scroll';
@@ -165,7 +173,7 @@ module.exports = {
             } else {
                 this.setTranslateY(0);
                 this.content.scrollTop = 0;
-                this.content.style.overflow = overflow;
+                this.content.style.overflowY = overflow;
             }
 
             if (this.vidBkgnd !== undefined) {
@@ -187,7 +195,7 @@ module.exports = {
             } else {
                 this.setTranslateY(100);
                 this.content.scrollTop = 0;
-                this.content.style.overflow = overflow;
+                this.content.style.overflowY = overflow;
             }
 
             this.contentOn = false;
@@ -202,7 +210,7 @@ module.exports = {
             if (this.scrollInterval !== undefined) { clearInterval(this.scrollInterval); }
 
             self.content.scrollTop = 0;
-            self.content.style.overflow = 'hidden';
+            self.content.style.overflowY = 'hidden';
 
             let curPos = 0;
             this.scrollInterval = setInterval(() => {
@@ -217,7 +225,7 @@ module.exports = {
                 // checking finality to clear interval
                 if (curPos >= duration) {
                     clearInterval(self.scrollInterval);
-                    self.content.style.overflow = overflow;
+                    self.content.style.overflowY = overflow;
                 }
             }, 5);
         };
@@ -279,7 +287,7 @@ module.exports = {
         if (config.vidBkgnd !== undefined) {
             const vidBkgnd = this.newElement({
                 name: 'video',
-                className: `${ backgroundType }`,
+                className: `fullscreen ${ backgroundType }`,
                 appendTo: coverBkgnd,
                 attrs: {
                     src: config.vidBkgnd,
@@ -288,6 +296,11 @@ module.exports = {
                 },
             });
             vidBkgnd.muted = true;
+
+            if (config.imgBkgnd !== undefined) {
+                vidBkgnd.setAttribute('poster', config.imgBkgnd);
+            }
+
             slideObj.vidBkgnd = vidBkgnd;
         } else if (config.imgBkgnd !== undefined) {
             // image background
@@ -359,13 +372,14 @@ module.exports = {
         // adding created obj to parent array
         this.slides.push(slideObj);
 
-        // reinitializing swiper
-        this.initSwiper();
-
-        // load the first slide
+        // load the first slide's content
         if(this.slides.length == 1){
             slideObj.loadContent();
         }
+
+        // resize the fullscreen video
+        this.fsv.handleHeightWidth(this.container);
+
     },
 
     initSwiper() {
@@ -384,8 +398,6 @@ module.exports = {
             lazyLoading: true,
             lazyLoadingInPrevNext: true,
             lazyLoadingInPrevNextAmount: 2,
-            hashnav: true,
-            hashnavWatchState: true,
             replaceState: true,
             spaceBetween: 10,
             onInit(swiper) {
@@ -434,7 +446,6 @@ module.exports = {
 
                 if(self.lastSlideIndex !== swiper.activeIndex ){
                     self.lastSlideIndex = swiper.activeIndex;
-                    curSlide.loadContent();
                     window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
                 }
 
@@ -456,6 +467,18 @@ module.exports = {
                 });
             }
         });
+
+        // track hash entries into the page
+        if(this.swiper.activeIndex != 0){
+            const curSlide = this.slides[this.swiper.activeIndex];
+            window.ga('send', 'screenview', {screenName: `${ curSlide.name }-cover`});
+            window.ga('send', {
+                hitType: 'event',
+                eventCategory: 'Slide',
+                eventAction: `hash-entry-${ curSlide.name }`,
+                eventLabel: 'Our Gainesville'
+            });
+        }
 
     },
 
@@ -568,4 +591,35 @@ module.exports = {
             this.activeSlide.setTranslateY(offset);
         },
     },
+
+    slideTo: function(slugOrIndex){
+        let index;
+        if (typeof(slugOrIndex) == 'number'){
+            index = slugOrIndex;
+        }
+        else if (typeof (slugOrIndex) == 'string'){
+            this.slides.forEach((s, i) => {
+                if(s.name == slugOrIndex)
+                    index = i;
+            });
+        }
+        else{
+            throw new Error('discovery: slideTo paramter must be a number or string.');
+        }
+
+        this.swiper.slideTo(index, null, false);
+    },
+
+    handleLocalQueryLink: function(){
+        let self = this;
+        return function(queryObj){
+            if (queryObj !== null){
+                const slug = queryObj.s;
+                self.slideTo(slug);
+            }
+            else{
+                self.slideTo(0);
+            }
+        };
+    }
 };
