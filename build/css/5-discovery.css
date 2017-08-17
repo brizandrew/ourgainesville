@@ -20,7 +20,7 @@ html, body{
 }
 #discovery .swiper-button-prev,
 #discovery .swiper-button-next{
-	opacity: 0.6;
+	opacity: 0.8;
 	transition: opacity 0.5s;
 }
 
@@ -124,7 +124,7 @@ html, body{
 #discovery .swiper-slide .more{
 	position: absolute;
 	bottom: 0;
-	opacity: 0.6;
+	opacity: 0.8;
 	z-index: 2;
 	width: 100%;
 	margin: 0 auto 10px;
@@ -188,6 +188,7 @@ html, body{
 }
 
 #discovery .slide-headline{
+	margin-bottom: 10px;
 	font-size: 150px;
 	line-height: 137px;
 }
@@ -235,14 +236,8 @@ html, body{
 
 @media screen and (max-width: 500px) {
 	#discovery .slide-headline{
-		font-size: 50px;
-	}
-}
-
-@media screen and (max-width: 400px) {
-	#discovery .slide-headline{
-		font-size: 40px;
-		line-height: 47px;
+		font-size: 32px;
+		line-height: 38px;
 	}
 }
 

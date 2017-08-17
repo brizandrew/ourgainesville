@@ -7,7 +7,7 @@
     "test": "echo test",
     "prebuild": "npm run buildcss; npm run updateHtmlPhp;",
     "build": "browserify build/js/main.js -t [ babelify --presets [ es2015 ] ] | uglifyjs > dist/scripts.min.js",
-    "buildcss": "cat build/css/* | postcss -u autoprefixer -o dist/styles.min.css",
+    "buildcss": "cat build/css/* | postcss -u autoprefixer | postcss -u cssnano -o dist/styles.min.css",
     "watch": "nodemon -e js,css,html,php -w build -x 'npm run build'",
     "updateHtmlPhp": "cp build/index.html dist/index.html | true; cp build/index.php dist/index.php | true;"
   },
@@ -19,6 +19,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "csslint": "^1.0.2",
+    "cssnano": "^3.10.0",
     "eslint": "^4.4.1",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
@@ -28,7 +29,7 @@
     "uglify-js": "^2.7.3"
   },
   "dependencies": {
-    "swiper": "^3.4.2",
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^4.2.0",
+    "swiper": "^3.4.2"
   }
 }

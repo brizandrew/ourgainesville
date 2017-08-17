@@ -334,7 +334,7 @@ body{
 
 .longform figure iframe{
 	background-color: black;
-	background-image: url('./loading.gif');
+	background-image: url('//www.wuft.org/wp-content/themes/sahifa-wuft-child/longform/loading.gif');
 	background-size: contain;
 }
 
@@ -755,32 +755,3 @@ body{
 .longform .swiper-container-horizontal .swiper-pagination-bullets{
 	bottom: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
