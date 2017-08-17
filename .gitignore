@@ -11,4 +11,5 @@ initWatch.sh
 dist/scripts.min.js
 dist/styles.min.css
 dist/index.html
+dist/index.php
 img/
