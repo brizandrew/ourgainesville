@@ -38,6 +38,66 @@
                     "description" => "Lorem ipsum.",
                     "image" => "https://www.wuft.org/news/files/2017/07/IMG_0691.jpg"
                 ),
+                "without-limits" => array(
+                    "title" => "Without Limits",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/Concessa16-1.jpg"
+                ),
+                "city-streets-to-center-stage" => array(
+                    "title" => "City Streets To Center Stage",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/Mercer6.jpg"
+                ),
+                "teaching-a-beat" => array(
+                    "title" => "Teaching A Beat",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/don-w-student-at-lanier-1.jpg"
+                ),
+                "in-the-moments" => array(
+                    "title" => "In The Moments",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/E0.jpg"
+                ),
+                "a-cuban-renaissance" => array(
+                    "title" => "A Cuban Renaissance",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/Cuba_Iphone06_17_Tyler_Exhibition_-41.jpg"
+                ),
+                "redefining-her-story" => array(
+                    "title" => "Redefining Her Story",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/Melinapic7230.jpg"
+                ),
+                "a-hard-thing-to-silence" => array(
+                    "title" => "A Hard Thing To Silence",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/Vivian-Filer-0004-copy-1.jpg"
+                ),
+                "behind-the-bar" => array(
+                    "title" => "Behind The Bar",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/TomBlakePhotoStoryChrisWatkins-3-1.jpg"
+                ),
+                "love-your-neighbor" => array(
+                    "title" => "Love Your Neighbor",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/cover.jpg"
+                ),
+                "up-in-the-trees" => array(
+                    "title" => "Up In The Trees",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/GeneL18.jpg"
+                ),
+                "veteran-of-war" => array(
+                    "title" => "Veteran Of War Soldier For The Community",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/07/Gasche_headline.jpg"
+                ),
+                "a-life-of-resistance" => array(
+                    "title" => "A Life Of Resistance",
+                    "description" => "Lorem ipsum.",
+                    "image" => "https://www.wuft.org/news/files/2017/08/Headline-banner-photo.jpg"
+                ),
             );
 
             // get the slug from the url paramater or default to the $home value
