@@ -46,6 +46,7 @@
                 $slug = $home;
 
         ?>
+        <!-- End Custom Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@WUFTNews">
         <meta name="twitter:creator" content="@WUFTNews">
