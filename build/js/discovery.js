@@ -162,6 +162,12 @@ module.exports = {
 
                 // handle local query links
                 self.lql.reroute(self.handleLocalQueryLink());
+
+                // load addThis social buttons if loaded
+                if(window.addthis !== undefined){
+                    window.addthis.layers.refresh();
+                }
+
             }
         };
 
@@ -333,6 +339,12 @@ module.exports = {
             slideObj.content = content;
             slideObj.contentLoaded = false;
             slideObj.contentHTML = config.content;
+
+            const addThis = this.newElement({
+                name: 'div',
+                className: 'addthis_inline_share_toolbox'
+            });
+            slideObj.contentHTML += addThis.outerHTML;
 
             const more = this.newElement({
                 name: 'div',

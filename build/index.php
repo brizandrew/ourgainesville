@@ -23,7 +23,8 @@
 
         <!-- Custom Meta Tags By Story Slug -->
         <?php
-            $home = 'our-gainesville'; // default value
+            // default value
+            $home = 'our-gainesville';
 
             // metadata for each story
             $metadata = array(
@@ -59,5 +60,6 @@
         <div id="wuft-banner"><h3><a href="https://wuft.org/news">WUFT News &nbsp;|&nbsp; SPECIAL REPORT</a></h3></div>
         <script src="longform-template.min.js"></script>
         <script src="scripts.min.js"></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58d18b4ee57abebe"></script>
     </body>
 </html>
