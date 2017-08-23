@@ -30,7 +30,7 @@
             $metadata = array(
                 "our-gainesville" => array(
                     "title" => "Our Gainesville",
-                    "description" => "Individual stories of the people living, working, praying, performing and more in Gainesville.",
+                    "description" => "A community-engagement project highlighting the diverse stories and lives of the people who call Gainesville, Florida home.",
                     "image" => "https://www.wuft.org/news/files/2017/08/OurGainesvilleCover.jpg"
                 ),
                 "its-a-cade-thing" => array(
@@ -88,8 +88,8 @@
                     "description" => "Honoring his college roommate, Gainesville tree farmer dedicates his life to cultivating the canopy.",
                     "image" => "https://www.wuft.org/news/files/2017/08/GeneL18.jpg"
                 ),
-                "veteran-of-war" => array(
-                    "title" => "Veteran Of War Soldier For The Community",
+                "soldier-for-country-and-community" => array(
+                    "title" => "Soldier For Country & Community",
                     "description" => "Iwo Jima survivor brings lessons from the battlefield to the classroom.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Gasche_headline.jpg"
                 ),
