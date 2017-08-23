@@ -1,6 +1,8 @@
 # [Our Gainesville](https://www.wuft.org/projects/ourgainesville/)
 
-Each page in Our Gainesville was designed by the journalist who reported the story using [LongForm](http://andrewbriz.com/?p=longform). LongForm, a web application I created, gives journalists the agency to decide how their multimedia stories look without writing a single line of code.
+Our Gainesville is comprised of individual stories of people living, working, praying, performing and more. It tells the stories of who we are, where we are and what we are. It shows what makes Gainesville, Gainesville.
+
+Each page in the project was designed by the individual who reported the story using [LongForm](http://andrewbriz.com/?p=longform). LongForm, a web application I created, gives journalists the agency to decide how their multimedia stories look without writing a single line of code.
 
 Once they finished designing their page, the journalist sent me their LongForm files. [Gabrielle Calise](https://github.com/gabriellecalise) and I then took the files and used an early alpha version of a new tool I've been working on to stitch them together.
 
@@ -29,9 +31,6 @@ With a population of nearly 280,000 people, today's [Gainesville is welcoming](h
 This summer, WUFT reporters focused on a community-engagement project that highlights the rich diversity of the people who live here.
 
 We asked them why they made Gainesville home. All of them came here for different reasons, but one thing has kept them here — it's a place where finally they belong.
-
-The project, Our Gainesville, is comprised of individual stories of people living, working, praying, performing and more. It tells the stories of who we are, where we are and what we are. It shows what makes Gainesville, Gainesville.
-
 
 ## Credits
 Our Gainesville was produced by undergraduate and graduate students at the University of Florida's Innovation News Center in the College of Journalism and Communications. Editors Meghan Mangrum and Sophia Tarasevich guided the reporting and edited the stories by Cecilia Mazanec, Sydney Brodie, Luke Sullivan, Angela Hyse, Madison Imschweiler, Tyler Jarnagin, Tayler McLamb, Fabiana Otero, Rachel Rockwell, Spencer Thompson, Chris Watkins, Abigail Zavaski and Nick Wisby. The cover video was produced by Emma Green. Andrew Briz and Gabrielle Calise designed and built the webpage and interactive story.
