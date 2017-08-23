@@ -125,6 +125,12 @@ html, body{
     background-position: 0 50%;
 }
 
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd *::-webkit-media-controls-panel,
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd *::--webkit-media-controls-play-button,
+#discovery .swiper-slide .slide-cover .slide-cover-bkgnd *::-webkit-media-controls-start-playback-button{
+  display: none!important;
+  -webkit-appearance: none;
+}
 
 #discovery .swiper-slide .more{
 	position: absolute;
@@ -234,7 +240,7 @@ html, body{
 
 @media screen and (max-width: 700px) {
 	#discovery .slide-headline{
-		font-size: 75px;
+		font-size: 65px;
 		line-height: 70px;
 	}
 }
