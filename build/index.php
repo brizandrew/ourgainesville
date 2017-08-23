@@ -55,7 +55,7 @@
                 ),
                 "in-the-moments" => array(
                     "title" => "In The Moments",
-                    "description" => "In tune with the \"pulls\", Less Than Jake drummer is on a journey to create lasting memories.",
+                    "description" => "In tune with the &#34;pulls&#34;, Less Than Jake drummer is on a journey to create lasting memories.",
                     "image" => "https://www.wuft.org/news/files/2017/08/E0.jpg"
                 ),
                 "a-cuban-renaissance" => array(
@@ -80,7 +80,7 @@
                 ),
                 "love-your-neighbor" => array(
                     "title" => "Love Your Neighbor",
-                    "description" => "After decades of loss, the \"mayor of Linton Oaks\" finds purpose through service.",
+                    "description" => "After decades of loss, the &#34;mayor of Linton Oaks&#34; finds purpose through service.",
                     "image" => "https://www.wuft.org/news/files/2017/08/cover.jpg"
                 ),
                 "up-in-the-trees" => array(
