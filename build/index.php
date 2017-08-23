@@ -35,67 +35,67 @@
                 ),
                 "its-a-cade-thing" => array(
                     "title" => "It's A Cade Thing",
-                    "description" => "Lorem ipsum.",
+                    "description" => "For Phoebe Miles, Gainesville's story of innovation starts with her father.",
                     "image" => "https://www.wuft.org/news/files/2017/07/IMG_0691.jpg"
                 ),
                 "without-limits" => array(
                     "title" => "Without Limits",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Thousands of miles from home, a 48-year-old finds her purpose in a sorority.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Concessa16-1.jpg"
                 ),
                 "city-streets-to-center-stage" => array(
                     "title" => "City Streets To Center Stage",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Hippodrome Musical Director rises from rock bottom.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Mercer6.jpg"
                 ),
                 "teaching-a-beat" => array(
                     "title" => "Teaching A Beat",
-                    "description" => "Lorem ipsum.",
+                    "description" => "A love of music, and a left turn, brought Sidney Lanier music director to a life-changing crossroad.",
                     "image" => "https://www.wuft.org/news/files/2017/08/don-w-student-at-lanier-1.jpg"
                 ),
                 "in-the-moments" => array(
                     "title" => "In The Moments",
-                    "description" => "Lorem ipsum.",
+                    "description" => "In tune with the \"pulls\", Less Than Jake drummer is on a journey to create lasting memories.",
                     "image" => "https://www.wuft.org/news/files/2017/08/E0.jpg"
                 ),
                 "a-cuban-renaissance" => array(
                     "title" => "A Cuban Renaissance",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Cuban photographer makes up for lost time with Bulla Cubana.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Cuba_Iphone06_17_Tyler_Exhibition_-41.jpg"
                 ),
                 "redefining-her-story" => array(
                     "title" => "Redefining Her Story",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Coming out the second time meant she no longer had to lie to herself.",
                     "image" => "https://www.wuft.org/news/files/2017/08/Melinapic7230.jpg"
                 ),
                 "a-hard-thing-to-silence" => array(
                     "title" => "A Hard Thing To Silence",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Fighting racism and segregation, a nurse and young mother broke down barriers to equal healthcare.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Vivian-Filer-0004-copy-1.jpg"
                 ),
                 "behind-the-bar" => array(
                     "title" => "Behind The Bar",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Lillian's bartender brings The Tom Show home to happy hour.",
                     "image" => "https://www.wuft.org/news/files/2017/07/TomBlakePhotoStoryChrisWatkins-3-1.jpg"
                 ),
                 "love-your-neighbor" => array(
                     "title" => "Love Your Neighbor",
-                    "description" => "Lorem ipsum.",
+                    "description" => "After decades of loss, the \"mayor of Linton Oaks\" finds purpose through service.",
                     "image" => "https://www.wuft.org/news/files/2017/08/cover.jpg"
                 ),
                 "up-in-the-trees" => array(
                     "title" => "Up In The Trees",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Honoring his college roommate, Gainesville tree farmer dedicates his life to cultivating the canopy.",
                     "image" => "https://www.wuft.org/news/files/2017/08/GeneL18.jpg"
                 ),
                 "veteran-of-war" => array(
                     "title" => "Veteran Of War Soldier For The Community",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Iwo Jima survivor brings lessons from the battlefield to the classroom.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Gasche_headline.jpg"
                 ),
                 "a-life-of-resistance" => array(
                     "title" => "A Life Of Resistance",
-                    "description" => "Lorem ipsum.",
+                    "description" => "Gainesville grandmother still has the fight in her for human rights.",
                     "image" => "https://www.wuft.org/news/files/2017/08/Headline-banner-photo.jpg"
                 ),
             );
