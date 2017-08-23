@@ -1,3 +1,5 @@
+import inAppBrowserResizeFix from './inAppBrowserResizeFix.js';
+
 module.exports = {
     sw: require('swiper'),
     fsv: require('./fullscreenVideo.js'),
@@ -39,8 +41,7 @@ module.exports = {
                 hitType: 'event',
                 eventCategory: 'Slide',
                 eventAction: 'prev-button-clicked',
-                eventLabel: 'Our Gainesville',
-                eventValue: self.swiper.activeIndex
+                eventLabel: 'Our Gainesville'
             });
         };
 
@@ -54,8 +55,7 @@ module.exports = {
                 hitType: 'event',
                 eventCategory: 'Slide',
                 eventAction: 'next-button-clicked',
-                eventLabel: 'Our Gainesville',
-                eventValue: self.swiper.activeIndex
+                eventLabel: 'Our Gainesville'
             });
         };
 
@@ -75,8 +75,7 @@ module.exports = {
                         hitType: 'event',
                         eventCategory: 'Slide',
                         eventAction: 'vertical-scroll-open',
-                        eventLabel: 'Our Gainesville',
-                        eventValue: self.swiper.activeIndex
+                        eventLabel: 'Our Gainesville'
                     });
                 }
                 if (toggleOffCondition){
@@ -84,8 +83,7 @@ module.exports = {
                         hitType: 'event',
                         eventCategory: 'Slide',
                         eventAction: 'vertical-scroll-close',
-                        eventLabel: 'Our Gainesville',
-                        eventValue: self.swiper.activeIndex
+                        eventLabel: 'Our Gainesville'
                     });
                 }
                 if (toggleOnCondition || toggleOffCondition) {
@@ -96,6 +94,9 @@ module.exports = {
 
         // initliaze fullscreen video plugin
         this.fsv.init(this.container);
+
+        // initialize in-app browser resize fix
+        inAppBrowserResizeFix();
     },
 
     postInit() {
@@ -136,8 +137,7 @@ module.exports = {
                     hitType: 'event',
                     eventCategory: 'Slide',
                     eventAction: 'next-area-click',
-                    eventLabel: 'Our Gainesville',
-                    eventValue: self.swiper.activeIndex
+                    eventLabel: 'Our Gainesville'
                 });
             }
             else {
@@ -146,8 +146,7 @@ module.exports = {
                     hitType: 'event',
                     eventCategory: 'Slide',
                     eventAction: 'prev-area-click',
-                    eventLabel: 'Our Gainesville',
-                    eventValue: self.swiper.activeIndex
+                    eventLabel: 'Our Gainesville'
                 });
             }
         });
@@ -400,8 +399,7 @@ module.exports = {
                     hitType: 'event',
                     eventCategory: 'Slide',
                     eventAction: 'more-button-clicked',
-                    eventLabel: 'Our Gainesville',
-                    eventValue: self.swiper.activeIndex
+                    eventLabel: 'Our Gainesville'
                 });
             };
             for (let i = more.children.length - 1; i >= 0; i--) {
@@ -511,8 +509,7 @@ module.exports = {
                     hitType: 'event',
                     eventCategory: 'Slide',
                     eventAction: 'horizontal-slide-swipe',
-                    eventLabel: 'Our Gainesville',
-                    eventValue: self.swiper.activeIndex
+                    eventLabel: 'Our Gainesville'
                 });
             },
             onScroll(){
@@ -520,8 +517,7 @@ module.exports = {
                     hitType: 'event',
                     eventCategory: 'Slide',
                     eventAction: 'horizontal-slide-scroll',
-                    eventLabel: 'Our Gainesville',
-                    eventValue: self.swiper.activeIndex
+                    eventLabel: 'Our Gainesville'
                 });
             }
         });
@@ -537,8 +533,7 @@ module.exports = {
                 hitType: 'event',
                 eventCategory: 'Slide',
                 eventAction: `hash-entry-${ curSlide.name }`,
-                eventLabel: 'Our Gainesville',
-                eventValue: self.swiper.activeIndex
+                eventLabel: 'Our Gainesville'
             });
         }
 
@@ -630,8 +625,7 @@ module.exports = {
                                 hitType: 'event',
                                 eventCategory: 'Slide',
                                 eventAction: 'vertical-swipe-open',
-                                eventLabel: 'Our Gainesville',
-                                eventValue: self.swiper.activeIndex
+                                eventLabel: 'Our Gainesville'
                             });
                         }
                         else if (self.activeSlide.contentOn && this.direction === 0) {
@@ -640,8 +634,7 @@ module.exports = {
                                 hitType: 'event',
                                 eventCategory: 'Slide',
                                 eventAction: 'vertical-swipe-close',
-                                eventLabel: 'Our Gainesville',
-                                eventValue: self.swiper.activeIndex
+                                eventLabel: 'Our Gainesville'
                             });
                         }
                     } else {

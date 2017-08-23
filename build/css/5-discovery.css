@@ -1,6 +1,13 @@
+html, body, #discovery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
 html, body{
-	width: 100%;
-	height: calc(100% - 18.399px);
 	background-color: black;
 }
 
@@ -10,8 +17,6 @@ html, body{
 
 #discovery.swiper-container,
 #discovery .swiper-container{
-	width: 100%;
-	height: 100%;
     margin-top: 37px;
 }
 
