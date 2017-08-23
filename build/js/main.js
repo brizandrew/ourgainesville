@@ -1,4 +1,4 @@
-var ds = require('./discovery.js');
+var ds = require('./custom-modules/discovery.js');
 ds.preInit();
 
 ds.addSlide({
