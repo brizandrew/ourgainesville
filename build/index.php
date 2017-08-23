@@ -40,7 +40,7 @@
                 ),
                 "without-limits" => array(
                     "title" => "Without Limits",
-                    "description" => "Thousands of miles from home, a 48-year-old finds her purpose in a sorority.",
+                    "description" => "Thousands of miles from home, &#34;Gainesville Mom&#34; finds community in the kitchen.",
                     "image" => "https://www.wuft.org/news/files/2017/07/Concessa16-1.jpg"
                 ),
                 "city-streets-to-center-stage" => array(
