@@ -12,7 +12,7 @@ The result is a consistent amalgamation of many creative visions in an elegant a
 
 Gainesville.
 
-Maybe best known for the University of Florida and it's athletic prowess, the city stands at the intersection of the Old South and a new American city.  
+Maybe best known for the University of Florida and its athletic prowess, the city stands at the intersection of the Old South and a new American city.  
 
 It's the birthplace of the sports drink Gatorade.
 

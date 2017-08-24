@@ -115,6 +115,7 @@
         <meta name="twitter:image" content="<?php echo $metadata[$slug]['image'] ?>">
         <meta name="Description" content="<?php echo $metadata[$slug]['description'] ?>">
         <meta property="og:description" content="<?php echo $metadata[$slug]['description'] ?>">
+        <meta property="og:image" content="<?php echo $metadata[$slug]['image'] ?>">
         <!-- End Custom Meta Tags -->
     </head>
     <body>
