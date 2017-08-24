@@ -35,6 +35,8 @@ We asked them why they made Gainesville home. All of them came here for differen
 ## Credits
 Our Gainesville was produced by undergraduate and graduate students at the University of Florida's Innovation News Center in the College of Journalism and Communications. Editors Meghan Mangrum and Sophia Tarasevich guided the reporting and edited the stories by Cecilia Mazanec, Sydney Brodie, Luke Sullivan, Angela Hyse, Madison Imschweiler, Tyler Jarnagin, Tayler McLamb, Fabiana Otero, Rachel Rockwell, Spencer Thompson, Chris Watkins, Abigail Zavaski and Nick Wisby. The cover video was produced by Emma Green. Andrew Briz and Gabrielle Calise designed and built the webpage and interactive story.
 
+The code for Our Gainesville, including the code powering LongForm, was developed in Hatch at the University of Florida's College of Journalism and Communications. To learn more about the kind of work Hatch produces visit [http://jou.ufl.edu/hatch](http://jou.ufl.edu/hatch).
+
 ## Technical Stuff
 To build a local version of this project...
 
