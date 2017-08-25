@@ -106,16 +106,18 @@
                 $slug = $home;
 
         ?>
-        <!-- End Custom Meta Tags -->
+        <meta name="Description" content="<?php echo $metadata[$slug]['description'] ?>">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@WUFTNews">
         <meta name="twitter:creator" content="@WUFTNews">
         <meta name="twitter:title" content="<?php echo $metadata[$slug]['title'] ?>">
         <meta name="twitter:description" content="<?php echo $metadata[$slug]['description'] ?>">
         <meta name="twitter:image" content="<?php echo $metadata[$slug]['image'] ?>">
-        <meta name="Description" content="<?php echo $metadata[$slug]['description'] ?>">
+        <meta property="og:title" content="<?php echo $metadata[$slug]['title'] ?>">
         <meta property="og:description" content="<?php echo $metadata[$slug]['description'] ?>">
         <meta property="og:image" content="<?php echo $metadata[$slug]['image'] ?>">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://www.wuft.org/projects/ourgainesville/?s=<?php echo $slug?>">
         <!-- End Custom Meta Tags -->
     </head>
     <body>
